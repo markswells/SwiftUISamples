@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SwiftUISamplesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+//            LayoutNeutral()
+//            CustomEnvironmentKey()
+//            ParentChildViews()
+//            ImageMagnifier()
+//            AnimatableViews()
+//            AnimationTiming()
+//            ViewTransitions()
+//            SwiftUI_Metal()
+            SwiftDataExample()
         }
+        .modelContainer(for: Person.self)
     }
 }
