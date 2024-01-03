@@ -20,8 +20,14 @@ float normalizedAngle(float angle);
     return half4(1, 0, 0, color.a);
 }
 
+[[ stitchable ]] half4 darkened( float2 position, half4 color, float dim) {
+    float dimmer = dim < 0 ? 0 : dim;
+    dimmer = dimmer > 1 ? 1 : dimmer;
+    return half4(color.r * dimmer, color.g * dimmer, color.b * dimmer, color.a);
+}
+
 [[ stitchable ]] half4 colorInvert( float2 position, half4 color) {
-    return half4(color.r, color.g, color.b, 1 - color.a);
+    return half4(1, 0, 0, 1-color.a);
 }
 
 [[ stitchable ]] half4 gradient( float2 position, half4 color) {

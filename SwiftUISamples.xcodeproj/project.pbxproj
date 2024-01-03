@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC5810BE2B4612FE00FA3B82 /* SimpleTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5810BD2B4612FE00FA3B82 /* SimpleTimelineView.swift */; };
 		AC966A8C2B31D7A200DD7047 /* ViewTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC966A8B2B31D7A200DD7047 /* ViewTransitions.swift */; };
 		AC966A8E2B34AE9000DD7047 /* FlipAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC966A8D2B34AE9000DD7047 /* FlipAnimation.swift */; };
 		AC966A902B38BD0600DD7047 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = AC966A8F2B38BD0600DD7047 /* Shaders.metal */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC5810BD2B4612FE00FA3B82 /* SimpleTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimelineView.swift; sourceTree = "<group>"; };
 		AC966A8B2B31D7A200DD7047 /* ViewTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransitions.swift; sourceTree = "<group>"; };
 		AC966A8D2B34AE9000DD7047 /* FlipAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipAnimation.swift; sourceTree = "<group>"; };
 		AC966A8F2B38BD0600DD7047 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				AC966A8F2B38BD0600DD7047 /* Shaders.metal */,
 				AC966A912B38BD2A00DD7047 /* SwiftUI+Metal.swift */,
 				AC966A952B3C917800DD7047 /* SwiftDataExample.swift */,
+				AC5810BD2B4612FE00FA3B82 /* SimpleTimelineView.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC966A962B3C917800DD7047 /* SwiftDataExample.swift in Sources */,
+				AC5810BE2B4612FE00FA3B82 /* SimpleTimelineView.swift in Sources */,
 				ACB0E7E52B227BBD00738015 /* AnimationTiming.swift in Sources */,
 				ACFB3A222B0CF7FF00B84BB0 /* ContentView.swift in Sources */,
 				ACB0E7DF2B18E59D00738015 /* ImageMagnifier.swift in Sources */,
