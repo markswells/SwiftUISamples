@@ -20,8 +20,10 @@ struct SwiftUISamplesApp: App {
 //            AnimatableViews()
 //            AnimationTiming()
 //            ViewTransitions()
-            SwiftUI_Metal()
+//            SwiftUI_Metal()
 //            SwiftDataExample()
+//            SimpleTimelineView()
+            SimpleCanvas()
         }
         .modelContainer(for: Person.self)
     }
