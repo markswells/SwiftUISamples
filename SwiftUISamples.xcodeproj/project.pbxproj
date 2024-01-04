@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC5810BE2B4612FE00FA3B82 /* SimpleTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5810BD2B4612FE00FA3B82 /* SimpleTimelineView.swift */; };
 		AC5810C02B4636E900FA3B82 /* SimpleCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5810BF2B4636E900FA3B82 /* SimpleCanvas.swift */; };
+		AC5810C22B46726900FA3B82 /* CanvasInTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5810C12B46726900FA3B82 /* CanvasInTimeline.swift */; };
 		AC966A8C2B31D7A200DD7047 /* ViewTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC966A8B2B31D7A200DD7047 /* ViewTransitions.swift */; };
 		AC966A8E2B34AE9000DD7047 /* FlipAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC966A8D2B34AE9000DD7047 /* FlipAnimation.swift */; };
 		AC966A902B38BD0600DD7047 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = AC966A8F2B38BD0600DD7047 /* Shaders.metal */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		AC5810BD2B4612FE00FA3B82 /* SimpleTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimelineView.swift; sourceTree = "<group>"; };
 		AC5810BF2B4636E900FA3B82 /* SimpleCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCanvas.swift; sourceTree = "<group>"; };
+		AC5810C12B46726900FA3B82 /* CanvasInTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasInTimeline.swift; sourceTree = "<group>"; };
 		AC966A8B2B31D7A200DD7047 /* ViewTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransitions.swift; sourceTree = "<group>"; };
 		AC966A8D2B34AE9000DD7047 /* FlipAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipAnimation.swift; sourceTree = "<group>"; };
 		AC966A8F2B38BD0600DD7047 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				AC966A952B3C917800DD7047 /* SwiftDataExample.swift */,
 				AC5810BD2B4612FE00FA3B82 /* SimpleTimelineView.swift */,
 				AC5810BF2B4636E900FA3B82 /* SimpleCanvas.swift */,
+				AC5810C12B46726900FA3B82 /* CanvasInTimeline.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				ACFB3A202B0CF7FF00B84BB0 /* SwiftUISamplesApp.swift in Sources */,
 				ACB0E7E12B20E74700738015 /* LayoutNeutral.swift in Sources */,
 				AC966A8E2B34AE9000DD7047 /* FlipAnimation.swift in Sources */,
+				AC5810C22B46726900FA3B82 /* CanvasInTimeline.swift in Sources */,
 				AC966A902B38BD0600DD7047 /* Shaders.metal in Sources */,
 				AC966A8C2B31D7A200DD7047 /* ViewTransitions.swift in Sources */,
 				ACB0E7E32B22653200738015 /* AnimatableViews.swift in Sources */,
