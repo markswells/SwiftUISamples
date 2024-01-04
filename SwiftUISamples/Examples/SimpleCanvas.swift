@@ -27,7 +27,33 @@ struct SimpleCanvas: View {
     }
 }
 
+/// Drawing the same thing, but not using Canvas
 struct NonCanvasView: View {
+    let colors: [Color] = [.red, .orange, .yellow, .mint, .cyan, .blue, .indigo, .black, .white]
+    
+    var body: some View {
+        ZStack(alignment: .center) {
+            GeometryReader(content: { geometry in
+                let outerDiameter = geometry.size.width <= geometry.size.height ? geometry.size.width : geometry.size.height
+                Circle()
+                    .fill(colors[0])
+                    .overlay(alignment: .center) {
+                        ForEach(0..<9) {
+                            ix in
+                            let scale = 1.0 - Double(ix) / Double(colors.count)
+                            Circle()
+                                .fill(colors[ix])
+                                .frame(width: outerDiameter * scale, height: outerDiameter * scale)
+                        }
+                    }
+            })
+        }
+    }
+}
+
+/// Note: this did not work, because with a ZStack, there's no notion of the outer parent View being a rectangle - takes the whole screen,
+    /// thus the .containerRelativeFrame([.vertical]) pushes the content below the frame indicated by the black outline
+struct PoorNonCanvasView: View {
     let colors: [Color] = [.red, .orange, .yellow, .mint, .cyan, .blue, .indigo, .black, .white]
     
     var body: some View {
@@ -40,8 +66,7 @@ struct NonCanvasView: View {
                     Circle()
                         .fill(colors[ix])
                         .frame(width: outerDiameter * scale, height: outerDiameter * scale)
-                        .containerRelativeFrame([.horizontal])
-                        .containerRelativeFrame([.vertical])
+                        .containerRelativeFrame([.horizontal, .vertical])
                 }
             })
         }
@@ -57,6 +82,11 @@ struct NonCanvasView: View {
                     Rectangle().stroke(lineWidth: 2)
                 }
             NonCanvasView()
+                .frame(width: 300, height: 300)
+                .overlay() {
+                    Rectangle().stroke(lineWidth: 2)
+                }
+            PoorNonCanvasView()
                 .frame(width: 300, height: 300)
                 .overlay() {
                     Rectangle().stroke(lineWidth: 2)
