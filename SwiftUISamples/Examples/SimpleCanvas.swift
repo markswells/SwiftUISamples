@@ -12,7 +12,7 @@ struct SimpleCanvas: View {
     let colors: [Color] = [.red, .orange, .yellow, .mint, .cyan, .blue, .indigo, .black, .white]
     
     var body: some View {
-        Canvas(opaque: true, colorMode: .linear, rendersAsynchronously: false) { (context, size) in
+        Canvas(opaque: false, colorMode: .linear, rendersAsynchronously: false) { (context, size) in
             let canvasRect = CGRect(origin: .zero, size: size)
             colors.enumerated().forEach { ix, color in
                 let scale = 1.0 - Double(ix) / Double(colors.count)
@@ -23,11 +23,44 @@ struct SimpleCanvas: View {
                 context.fill(path, with: .color(color))
             }
         }
-        .edgesIgnoringSafeArea(.all)
-        .background(.black)
+        .background(.white)
+    }
+}
+
+struct NonCanvasView: View {
+    let colors: [Color] = [.red, .orange, .yellow, .mint, .cyan, .blue, .indigo, .black, .white]
+    
+    var body: some View {
+        ZStack(alignment: .center) {
+            GeometryReader(content: { geometry in
+                let outerDiameter = geometry.size.width <= geometry.size.height ? geometry.size.width : geometry.size.height
+                ForEach(0..<9) {
+                    ix in
+                    let scale = 1.0 - Double(ix) / Double(colors.count)
+                    Circle()
+                        .fill(colors[ix])
+                        .frame(width: outerDiameter * scale, height: outerDiameter * scale)
+                        .containerRelativeFrame([.horizontal])
+                        .containerRelativeFrame([.vertical])
+                }
+            })
+        }
     }
 }
 
 #Preview {
-    SimpleCanvas()
+    ScrollView {
+        VStack {
+            SimpleCanvas()
+                .frame(width: 300, height: 300)
+                .overlay() {
+                    Rectangle().stroke(lineWidth: 2)
+                }
+            NonCanvasView()
+                .frame(width: 300, height: 300)
+                .overlay() {
+                    Rectangle().stroke(lineWidth: 2)
+                }
+        }
+    }
 }

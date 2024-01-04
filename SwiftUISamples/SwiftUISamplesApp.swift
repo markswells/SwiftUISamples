@@ -24,6 +24,7 @@ struct SwiftUISamplesApp: App {
 //            SwiftDataExample()
 //            SimpleTimelineView()
             SimpleCanvas()
+//            CanvasInTimeline()
         }
         .modelContainer(for: Person.self)
     }
