@@ -20,6 +20,7 @@ struct SwiftUI_Metal: View {
                 baseImage().colorEffect(ShaderLibrary.colorInvert()).roundedBackground()
                 baseImage().colorEffect(ShaderLibrary.gradient()).roundedBackground()
                 rainbowTimelineView().roundedBackground()
+                rainbow2TimelineView().roundedBackground()
                 waveTimelineView().roundedBackground()
             }
             .padding(10)
@@ -40,6 +41,21 @@ struct SwiftUI_Metal: View {
                 .font(.system(size: 120))
                 .foregroundStyle(.blue)
                 .colorEffect(ShaderLibrary.rainbow(.float(time)))
+        }
+    }
+    
+    func rainbow2TimelineView() -> some View {
+        GeometryReader { proxy in
+            TimelineView(.animation) { tl in
+                let time = start.distance(to: tl.date)
+                
+                Image(systemName: "figure.walk.circle")
+                    .font(.system(size: 120))
+                    .foregroundStyle(.blue)
+                    .colorEffect(ShaderLibrary.rainbow2(.float(time),
+                                                        .float(proxy.size.width),
+                                                        .float(proxy.size.height)))
+            }
         }
     }
     

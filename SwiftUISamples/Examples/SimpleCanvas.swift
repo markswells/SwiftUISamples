@@ -23,7 +23,6 @@ struct SimpleCanvas: View {
                 context.fill(path, with: .color(color))
             }
         }
-        .background(.white)
     }
 }
 
@@ -74,23 +73,27 @@ struct PoorNonCanvasView: View {
 }
 
 #Preview {
-    ScrollView {
-        VStack {
-            SimpleCanvas()
-                .frame(width: 300, height: 300)
-                .overlay() {
-                    Rectangle().stroke(lineWidth: 2)
-                }
-            NonCanvasView()
-                .frame(width: 300, height: 300)
-                .overlay() {
-                    Rectangle().stroke(lineWidth: 2)
-                }
-            PoorNonCanvasView()
-                .frame(width: 300, height: 300)
-                .overlay() {
-                    Rectangle().stroke(lineWidth: 2)
-                }
+    ZStack {
+        Color(.blue)
+            .ignoresSafeArea(.all)
+        ScrollView {
+            VStack {
+                SimpleCanvas()
+                    .frame(width: 300, height: 300)
+                    .overlay() {
+                        Rectangle().stroke(lineWidth: 2)
+                    }
+                NonCanvasView()
+                    .frame(width: 300, height: 300)
+                    .overlay() {
+                        Rectangle().stroke(lineWidth: 2)
+                    }
+                PoorNonCanvasView()
+                    .frame(width: 300, height: 300)
+                    .overlay() {
+                        Rectangle().stroke(lineWidth: 2)
+                    }
+            }
         }
     }
 }

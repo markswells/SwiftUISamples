@@ -35,7 +35,18 @@ float normalizedAngle(float angle);
 }
 
 [[ stitchable ]] half4 rainbow( float2 position, half4 color, float t) {
-    float angle = atan2(position.x, position.y) + t;
+    float angle = (atan2(position.x, position.y) + t);
+    return half4(
+                 normalizedAngle(angle),
+                 normalizedAngle(angle + 20),
+                 normalizedAngle(angle + 40),
+                 color.a);
+}
+
+[[ stitchable ]] half4 rainbow2( float2 position, half4 color, float t, float width, float height) {
+    float x = position.x - width / 2;
+    float y = position.y - height / 2;
+    float angle = (atan2(x, y) + t);
     return half4(
                  normalizedAngle(angle),
                  normalizedAngle(angle + 20),
